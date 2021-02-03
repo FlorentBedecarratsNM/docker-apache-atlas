@@ -58,7 +58,8 @@ RUN cd /opt/apache-atlas-${VERSION} \
     && sleep 10 \
     && /opt/apache-atlas-${VERSION}/bin/atlas_stop.py
 
-# Start edits from sburn code base
+# Start edits from sburn code base to provide an UI in French
+# Translate SearchLayoutView_tmpl.html (left search panel on the "legacy" UI)
 RUN sed -i -e 's/>Basic</>Simple</' \
         -e 's/>Advanced</>Avancée</' \
         -e 's/title="Refresh"/title="Rafraichir"/' \
@@ -70,4 +71,12 @@ RUN sed -i -e 's/>Basic</>Simple</' \
         -e 's/>Search By Text</>Recherche en texte intégral</' \
         -e 's/placeholder="Search by text"/placeholder="Search by text"/' \
         -e 's/>Clear</>Effacer</' \
-        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/search/SearchLayoutView_tmpl.html
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/search/SearchLayoutView_tmpl.html   
+
+# Translate SearchLayoutView.js (ie. JS prompts in the left search panel on the "legacy" UI)
+RUN sed -i -e 's/>placeholder: "Search Term"</>placeholder: "Mot-clé à rechercher"</' \
+        -e 's/title: '\''Advanced Search Queries'\''/title: '\''Requêtes avancées'\''/' \
+        -e 's/text('\''Search By Query'\'')/text('\''Recherche par requête'\'')/' \
+        -e 's/Search By Query eg./Search By Query ex./' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/views/search/SearchLayoutView.js
+
