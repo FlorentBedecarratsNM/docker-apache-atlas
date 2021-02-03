@@ -57,3 +57,17 @@ RUN cd /opt/apache-atlas-${VERSION} \
     && tail -f /opt/apache-atlas-${VERSION}/logs/application.log | sed '/AtlasAuthenticationFilter.init(filterConfig=null)/ q' \
     && sleep 10 \
     && /opt/apache-atlas-${VERSION}/bin/atlas_stop.py
+
+# Start edits from sburn code base
+RUN sed -i -e 's/>Basic</>Simple</' \
+        -e 's/>Advanced</>Avancée</' \
+        -e 's/title="Refresh"/title="Rafraichir"/' \
+        -e 's/>Search By Type</>Recherche par type</' \
+        -e 's/title="Entity Attribute Filter"/title="Type d'\''entité à filtrer"/' \
+        -e 's/>Search By Classification</>Recherche par tag</' \
+        -e 's/title="Tag Attribute Filter"/title="Tag à filtrer"/' \
+        -e 's/>Search By Term</>Recherche par mot-clé</' \
+        -e 's/>Search By Text</>Recherche en texte intégral</' \
+        -e 's/placeholder="Search by text"/placeholder="Search by text"/' \
+        -e 's/>Clear</>Effacer</' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/search/SearchLayoutView_tmpl.html
