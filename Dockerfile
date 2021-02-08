@@ -80,3 +80,68 @@ RUN sed -i -e 's/>placeholder: "Search Term"</>placeholder: "Mot-clé à recherc
         -e 's/Search By Query eg./Search By Query ex./' \
         opt/apache-atlas-${VERSION}/server/webapp/atlas/js/views/search/SearchLayoutView.js
 
+RUN sed -i -e 's/>Business Metadata</>Métadonnées métier</' \
+        -e 's/>Type System</>Système de types</' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/administrator/AdministratorLayoutView_tmpl.html
+	
+RUN sed -i -e 's/i> Filters</i> Filtres</' \
+        -e 's/>Apply</>Appliquer</' \
+	-e 's/><span>No Records found!</<span>Aucun résultat trouvé!</' \
+        -e 's/title="Collapse">/title="Masquer">/' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/audit/AdminAuditTableLayoutView_tmpl.html
+
+RUN sed -i -e 's/title="Previous"/title="Précédent"/' \
+        -e 's/title="Next"/title="Suivant"/' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/audit/AuditTableLayoutView_tmpl.html
+	
+RUN sed -i -e 's/<a>Properties </<a>Propriétés </' \
+	-e 's/><span>No records found!</<span>Aucun résultat trouvé!</' \
+        -e 's/title="Collapse">/title="Masquer">/' \
+	-e 's/>Technical properties </>Propriétés techniques </' \
+	-e 's/<a>Relationship properties </<a>Propriétés des relations </' \
+	-e 's/a>User-defined properties </a>Propriétés définies par les utilisateurs </' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/audit/CreateAuditTableLayoutView_tmpl.html
+
+RUN sed -i -e 's/>Name</>Nom</' \
+        -e 's/>Search Weight</>Pondération recherche</' \
+	-e 's/>Enable Multivalues</>Valeurs multiples</' \
+	-e 's/>Enum Value</>Valeur enum</' \
+	-e 's/>Max length</>Longueur max</' \
+	-e 's/>Applicable Types</>Types applicables</' \
+	-e 's/title="Create\/Update Enum"/title="Créer\/MàJ Enum"/' \
+	-e 's/the search weight for the attribute/pondération de recherche associée à l'\''attribut/' \
+	-e 's/the entity in the topmost search results when searched for by that attribute/l'\''entité placée en tête pour cette recherche d'\''attribut/' \
+	-e 's/Applicable Ranges/Valeurs applicables/' \
+	-e 's/Quick search:/Recherche rapide :/' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/business_metadata/BusinessMetadataAttributeItemView_tmpl.html
+
+RUN sed -i -e 's/>Cancel</>Annuler</' \
+        -e 's/Create Business Metadata Attribute/Créer un attribut associé à une métadonnée métier/' \
+	-e 's/i> Attributes/i> Attributs/' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/business_metadata/BusinessMetadataAttrTableLayoutView_tmpl.html
+
+RUN sed -i -e 's/>Cancel</>Annuler</' \
+        -e 's/Create Business Metadata/Créer une métadonnée métier/' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/business_metadata/BusinessMetadataTableLayoutView_tmpl.html
+
+RUN sed -i -e 's/>Name</>Nom</' \
+        -e 's/Name(required)/Nom (requis)/' \
+	-e 's/Add Business Metadata attribute/Ajouter une métadonnée métier/' \
+	-e 's/Add Business Metadata attribute/Ajouter une métadonnée métier/' \
+	-e 's/>Cancel</>Annuler</' \
+	-e 's/>Attributes</>Attributs</' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/business_metadata/CreateBusinessMetadataLayoutView_tmpl.html
+	
+RUN sed -i -e 's/>Cancel</>Annuler</' \
+	-e 's/>Update</>Mettre à jour</' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/business_metadata/EnumCreateUpdateItemView_tmpl.html
+	
+RUN sed -i -e 's/title="Previous"/title="Précédent"/' \
+	-e 's/title="Next"/title="Suivant"/' \
+	-e 's/title="Goto Page"/title="Aller à la page"/' \
+	-e 's/>Page Limit :</>Limite de page :</' \
+	-e 's/>Go!</>Aller</' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/common/TableLayout_tmpl.html
+	
+RUN sed -i -e 's/title="Edit Entity"/title="Modif entité"/' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/common/buttons_tmpl.html
