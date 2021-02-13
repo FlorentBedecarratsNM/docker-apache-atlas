@@ -71,6 +71,7 @@ RUN sed -i -e 's/>Basic</>Simple</' \
         -e 's/>Search By Text</>Recherche en texte intégral</' \
         -e 's/placeholder="Search by text"/placeholder="Search by text"/' \
         -e 's/>Clear</>Effacer</' \
+	-e 's/>Search</>Chercher</' \
         opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/search/SearchLayoutView_tmpl.html   
 
 # Translate SearchLayoutView.js (ie. JS prompts in the left search panel on the "legacy" UI)
