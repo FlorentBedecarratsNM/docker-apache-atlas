@@ -145,3 +145,53 @@ RUN sed -i -e 's/title="Previous"/title="Précédent"/' \
 	
 RUN sed -i -e 's/title="Edit Entity"/title="Modif entité"/' \
         opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/common/buttons_tmpl.html
+	
+RUN sed -i -e 's/>Classifications:</>Tags :/' \
+	-e 's/>Terms:</>Mots-clés :</' \
+	-e 's/>Propagated Classifications:</>>Tags propagés:</' \
+	-e 's/>Properties</>Propriétés</' \
+	-e 's/>Classifications</>Tags</' \
+	-e 's/>Export\/Import Audits</>Exporter\/Importer audits</' \
+	-e 's/>Schema</>Schéma</' \
+	-e 's/>Profile</>Profil</' \
+	-e 's/title="Add Classification"/title="Ajouter tag"/' \
+	-e 's/title="Add Term"/title="Ajouter mot-clé"/' \
+	-e 's/>Profile</>Profil</' \
+	-e 's/>Profile</>Profil</' \
+	-e 's/>Profile</>Profil</' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/detail_page/DetailPageLayoutView_tmpl.html
+
+RUN sed -i -e 's/>Required</>Requis</' \
+	-e 's/>All</>Tous</' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/entity/CreateEntityLayoutView_tmpl.html
+
+RUN sed -i -e 's/>Business Metadata</>Métadonnées métier</' \
+	-e 's/>Add</>Ajouter</' \
+	-e 's/>Cancel</>Annuler</' \
+	-e 's/>Add New Attribute</>Ajouter un attribut</' \
+	-e 's/title="Collapse"/title="Masquer"/' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/entity/EntityBusinessMetaDataView_tmpl.html
+
+RUN sed -i -e 's/>Technical properties </>Propriétés techniques</' \
+	-e 's/title="Edit Entity"/title="Modif entité"/' \
+	-e 's/title="Collapse"/title="Masquer"/' \
+	-e 's/title="Show empty values"/title="Afficher valeurs manquantes"/' \
+	-e 's/>Edit</>Editer</' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/entity/EntityDetailTableLayoutView_tmpl.html
+
+RUN sed -i -e 's/>Save</>Enregistrer</' \
+	-e 's/>Cancel</>Annuler</' \
+	-e 's/No labels have been created yet. To add a labels, click/Aucun label n'\''a encore été créé. Pour en ajouter, cliquer/' \
+	-e 's/title="Collapse"/title="Masquer"/' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/entity/EntityLabelDefineView_tmpl.html
+	
+RUN sed -i -e 's/All properties has been removed. To add a property, click /Toutes les propriétés ont été suprimées. Pour en ajouter, cliquer /' \
+	-e 's/No properties have been created yet. To add a property, click /Aucune propriété n'\''a été créée. Pour en ajouter, cliquer /' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/entity/EntityUserDefineItemView_tmpl.html
+
+RUN sed -i -e 's/>User-defined properties </>Propriétés définies par les utilisateurs </' \
+	-e 's/title="Collapse"/title="Masquer"/' \
+	-e 's/>Save</>Enregistrer</' \
+	-e 's/>Cancel</>Annuler</' \
+	-e 's/No properties have been created yet. To add a property, click /Aucune propriété n'\''a été créée. Pour en ajouter, cliquer /' \
+        opt/apache-atlas-${VERSION}/server/webapp/atlas/js/templates/entity/EntityUserDefineView_tmpl.html
