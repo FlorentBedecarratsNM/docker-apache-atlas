@@ -1,5 +1,5 @@
 #!/bin/sh
-for i in $(ls /opt/apache-atlas-2.1.0/server/webapp/atlas/js/templates/*/*.html); do
+for i in $(ls /opt/apache-atlas-2.1.0/server/webapp/atlas/js/templates/*/*.html /opt/apache-atlas-2.1.0/server/webapp/atlas/js/templates/*/*/*.html); do
      sed -i -e 's/>About</>A propos</g' \
     -e 's/"Active Entity"/"Entité active"/g' \
     -e 's/>Add attribute values for this classification</>Ajouter des attributs à ce tag</g' \
@@ -71,6 +71,7 @@ for i in $(ls /opt/apache-atlas-2.1.0/server/webapp/atlas/js/templates/*/*.html)
     -e 's/>Export\/Import Audits</>Exporter\/Importer audits</g' \
     -e 's/"Export to PNG"/"Exporter en PNG"/g' \
     -e 's/>Failed</>Echecs</g' \
+    -e 's/>Favorite Searches</>Recherches favorites</g' \
     -e 's/"Filter"/"Filtrer"/g' \
     -e 's/> Filters</> Filtres</g' \
     -e 's/>Filters</>Filtres</g' \
@@ -130,6 +131,7 @@ for i in $(ls /opt/apache-atlas-2.1.0/server/webapp/atlas/js/templates/*/*.html)
     -e 's/>Rows</>Lignes</g' \
     -e 's/>Runtime</>Exécution</g' \
     -e 's/>Save</>Enregistrer</g' \
+    -e 's/>Save As</>Enregistrer sous</g' \
     -e 's/>Schema</>Schéma</g' \
     -e 's/"Search"/"Chercher"/g' \
     -e 's/> Search</> Recherche</g' \
@@ -187,6 +189,7 @@ for i in $(ls /opt/apache-atlas-2.1.0/server/webapp/atlas/js/templates/*/*.html)
     -e 's/>Use DSL (Domain Specific Language) to build queries</>Utiliser le DSL (Domain Specific Language) pour construire des requêtes</g' \
     -e 's/>User-defined properties </>Propriétés définies par les utilisateurs </g' \
     -e 's/>Value</>Valeur</g' \
+    -e 's/>You don'\''t have any favorite search.</>Vous n'\''avez pas de recherche favorite.</g' \
     -e 's/"Zoom In"/"Zoomer"/g' \
     -e 's/"Zoom Out"/"Dézoomer"/g' \
     $i
