@@ -59,7 +59,6 @@ RUN cd /opt/apache-atlas-${VERSION} \
     && /opt/apache-atlas-${VERSION}/bin/atlas_stop.py
 
 # Start edits from sburn code base to provide an UI in French
-COPY translate.sh /opt/apache-atlas-${VERSION}
+COPY translate.sh translate.sh
 
-RUN cd /opt/apache-atlas-${VERSION} \
-    && ./translate.sh
+RUN ./translate.sh
