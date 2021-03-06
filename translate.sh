@@ -1,5 +1,5 @@
 #!/bin/sh
-for i in $(ls /opt/apache-atlas-2.1.0/server/webapp/atlas/js/templates/*/*.html /opt/apache-atlas-2.1.0/server/webapp/atlas/js/templates/*/*/*.html); do
+for i in $(find /opt/apache-atlas-2.1.0/server/webapp/atlas/ -name '*.html'); do
      sed -i -e 's/>About</>A propos</g' \
     -e 's/"Active Entity"/"Entité active"/g' \
     -e 's/>Add attribute values for this classification</>Ajouter des attributs à ce tag</g' \
@@ -49,6 +49,7 @@ for i in $(ls /opt/apache-atlas-2.1.0/server/webapp/atlas/js/templates/*/*.html 
     -e 's/> create new entity </> créer une entité </g' \
     -e 's/"Create\/Update Enum"/"Créer\/MàJ Enum"/g' \
     -e 's/>Creates</>Créations</g' \
+    -e 's/>Custom Filters</>Filtres</g' \
     -e 's/>Date Created</>Date de création</g' \
     -e 's/>DB</>BDD</g' \
     -e 's/>Deleted</>Supprimée</g' \
@@ -81,6 +82,7 @@ for i in $(ls /opt/apache-atlas-2.1.0/server/webapp/atlas/js/templates/*/*.html 
     -e 's/>Get involved!</>Participez !</g' \
     -e 's/>Glossary</>Glossaire</g' \
     -e 's/> Glossary</> Glossaire</g' \
+    -e 's/>Glossaries</>Mots-clés</g' \
     -e 's/>Go!</>Aller</g' \
     -e 's/"Goto Page"/"Aller à la page"/g' \
     -e 's/>Graph</>Graphe</g' \
