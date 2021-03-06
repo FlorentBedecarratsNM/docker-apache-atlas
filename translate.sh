@@ -32,6 +32,7 @@ for i in $(ls /opt/apache-atlas-2.1.0/server/webapp/atlas/js/templates/*/*.html 
     -e 's/>Basic</>Simple</g' \
     -e 's/>Bulk Import</>Import en masse</g' \
     -e 's/>Business Metadata</>Métadonnées métier</g' \
+    -e 's/>Browse</>Naviguer</g' \
     -e 's/>Cancel</>Annuler</g' \
     -e 's/>Cardinality</>Cardinalité</g' \
     -e 's/>Categories:</>Catégories :</g' \
