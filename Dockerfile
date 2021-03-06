@@ -59,10 +59,9 @@ RUN cd /opt/apache-atlas-${VERSION} \
     && /opt/apache-atlas-${VERSION}/bin/atlas_stop.py
 
 # Start edits from sburn code base to provide an UI in French
-# Translate SearchLayoutView_tmpl.html (left search panel on the "legacy" UI)
-for i in $(ls templates/*/*.html); do
+RUN for i in $(ls templates/*/*.html); do
     sed -i -e 's/"Active Entity"/"Entité active"/g' \
-    -e 's/Add Business Metadata attribute/Ajouter une métadonnée métier/g' \
+        -e 's/Add Business Metadata attribute/Ajouter une métadonnée métier/g' \
 	-e 's/"Add Category"/"Ajouter catégorie"/g' \
 	-e 's/"Add Classification"/"Ajouter tag"/g' \
 	-e 's/>Add New Attribute</>Ajouter un attribut</g' \
