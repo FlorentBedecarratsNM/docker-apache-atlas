@@ -66,7 +66,7 @@ for i in $(find /opt/apache-atlas-2.1.0/server/webapp/atlas/ -name '*.html'); do
     -e 's/>End Time</>Fin</g' \
     -e 's/>Enum Value</>Valeur enum</g' \
     -e 's/>Entities</>Entités</g' \
-    -e 's/>"Entities, Classifications , Glossaries"</>"Entités, tags, mots-clés"</g' \
+    -e 's/"Entities, Classifications , Glossaries"/"Entités, tags, mots-clés"/g' \
     -e 's/"Entity Attribute Filter"/"Type d'\''entité à filtrer"/g' \
     -e 's/>Entity-types:</>Types d'\''entités :</g' \
     -e 's/>Exclude sub-classifications</>Exclure les sous-classifications</g' \
@@ -178,6 +178,7 @@ for i in $(find /opt/apache-atlas-2.1.0/server/webapp/atlas/ -name '*.html'); do
     -e 's/>Start Time</>Début</g' \
     -e 's/>successful</>réussie</g' \
     -e 's/>Switch to New</>Nouvelle interface</g' \
+    -e 's/Switch to Classic</Interface classique</g' \
     -e 's/>System Details</>Détails système</g' \
     -e 's/>Table</>Tableau</g' \
     -e 's/"Tag Attribute Filter"/"Tag à filtrer"/g' \
