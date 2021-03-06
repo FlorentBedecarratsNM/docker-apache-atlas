@@ -1,4 +1,4 @@
-for i in $(ls server/webapp/atlas/js/templates/*/*.html); do
+for i in $(ls /opt/apache-atlas-2.1.0/server/webapp/atlas/js/templates/*/*.html); do
  sed -i -e 's/"Active Entity"/"Entité active"/g' \
   -e 's/Add Business Metadata attribute/Ajouter une métadonnée métier/g' \
 	-e 's/"Add Category"/"Ajouter catégorie"/g' \
