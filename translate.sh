@@ -1,3 +1,4 @@
+#!/bin/sh
 for i in $(ls /opt/apache-atlas-2.1.0/server/webapp/atlas/js/templates/*/*.html); do
  sed -i -e 's/"Active Entity"/"Entité active"/g' \
   -e 's/Add Business Metadata attribute/Ajouter une métadonnée métier/g' \
@@ -5,7 +6,7 @@ for i in $(ls /opt/apache-atlas-2.1.0/server/webapp/atlas/js/templates/*/*.html)
 	-e 's/"Add Classification"/"Ajouter tag"/g' \
 	-e 's/>Add New Attribute</>Ajouter un attribut</g' \
 	-e 's/"Add Term"/"Ajouter mot-clé"/g' \
-  -e 's/>Advanced</>Avancée</g' \
+	-e 's/>Advanced</>Avancée</g' \
 	-e 's/'\''Advanced Search Queries'\''/title: '\''Requêtes avancées'\''/g' \
 	-e 's/>All</>Tous</g' \
 	-e 's/All properties has been removed. To add a property, click /Toutes les propriétés ont été suprimées. Pour en ajouter, cliquer /g' \
