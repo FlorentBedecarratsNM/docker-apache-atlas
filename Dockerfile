@@ -61,4 +61,5 @@ RUN cd /opt/apache-atlas-${VERSION} \
 # Start edits from sburn code base to provide an UI in French
 COPY translate.sh /opt/apache-atlas-${VERSION}/bin/translate.sh
 
-RUN ./opt/apache-atlas-${VERSION}/bin/translate.sh
+RUN chmod +x /opt/apache-atlas-${VERSION}/bin/translate.sh \
+    && ./opt/apache-atlas-${VERSION}/bin/translate.sh 
