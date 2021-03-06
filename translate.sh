@@ -65,6 +65,7 @@ for i in $(ls /opt/apache-atlas-2.1.0/server/webapp/atlas/js/templates/*/*.html 
     -e 's/>End Time</>Fin</g' \
     -e 's/>Enum Value</>Valeur enum</g' \
     -e 's/>Entities</>Entités</g' \
+    -e 's/>"Entities, Classifications , Glossaries"</>"Entités, tags, mots-clés"</g' \
     -e 's/"Entity Attribute Filter"/"Type d'\''entité à filtrer"/g' \
     -e 's/>Entity-types:</>Types d'\''entités :</g' \
     -e 's/>Exclude sub-classifications</>Exclure les sous-classifications</g' \
