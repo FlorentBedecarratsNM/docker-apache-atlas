@@ -59,7 +59,7 @@ RUN cd /opt/apache-atlas-${VERSION} \
     && /opt/apache-atlas-${VERSION}/bin/atlas_stop.py
 
 # Start edits from sburn code base to provide an UI in French
-RUN for i in $(ls templates/*/*.html); do
+RUN for i in $(ls templates/*/*.html); do \
     sed -i -e 's/"Active Entity"/"Entité active"/g' \
         -e 's/Add Business Metadata attribute/Ajouter une métadonnée métier/g' \
 	-e 's/"Add Category"/"Ajouter catégorie"/g' \
