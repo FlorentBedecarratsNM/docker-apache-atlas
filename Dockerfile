@@ -190,5 +190,5 @@ RUN for i in $(ls templates/*/*.html); do \
 	-e 's/>Value</>Valeur</g' \
 	-e 's/"Zoom In"/"Zoomer"/g' \
 	-e 's/"Zoom Out"/"Dézoomer"/g' \
-	$i 
+	$i \
 done
