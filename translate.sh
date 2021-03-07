@@ -44,8 +44,10 @@ for i in $(find /opt/apache-atlas-2.1.0/server/webapp/atlas/ -name '*.html'); do
     -e 's/>Clear</>Effacer</g' \
     -e 's/"Collapse"/"Masquer"/g' \
     -e 's/>Count</>Décompte</g' \
+    -e 's/okLabel = '\''Create'\''/okLabel = '\''Créer'\''/g' \
     -e 's/Create Business Metadata/Créer une métadonnée métier/g' \
     -e 's/Create Business Metadata Attribute/Créer un attribut associé à une métadonnée métier/g' \
+    -e 's/entityTitle = '\''Create entity'\''/entityTitle = '\''Créer une entité'\''/g' \
     -e 's/> create new entity </> créer une entité </g' \
     -e 's/"Create\/Update Enum"/"Créer\/MàJ Enum"/g' \
     -e 's/>Creates</>Créations</g' \
@@ -176,6 +178,7 @@ for i in $(find /opt/apache-atlas-2.1.0/server/webapp/atlas/ -name '*.html'); do
     -e 's/>Show node details on hover</>Afficher les détails de l'\''entité au survol de la souris</g' \
     -e 's/>Single Query</>Requête unique</g' \
     -e 's/>Start Time</>Début</g' \
+    -e 's/"Statistics"/"Statistique"/g' \
     -e 's/>successful</>réussie</g' \
     -e 's/>Switch to New</>Nouvelle interface</g' \
     -e 's/Switch to Classic</Interface classique</g' \
